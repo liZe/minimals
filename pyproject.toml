@@ -1,0 +1,37 @@
+[build-system]
+requires = ["flit_core >=3.12.0, <4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "minimals"
+description = "An amazing game with mini animals in it!"
+keywords = ["game", "animals", "mini"]
+authors = [{name = "Guillaume Ayoub", email = "guillaume@courtbouillon.org"}]
+requires-python = ">=3.9"
+readme = {file = "README", content-type = "text/x-rst"}
+license = "MIT"
+dependencies = []
+classifiers = [
+  "Development Status :: 1 - Planning",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Games/Entertainment",
+]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/liZe/minimals"
+Documentation = 'https://doc.courtbouillon.org/minimals/'
+Code = "https://github.com/liZe/minimals"
+Issues = "https://github.com/liZe/minimals/issues"
+Changelog = "https://github.com/liZe/minimals/releases"
+
+[project.optional-dependencies]
+doc = ["sphinx", "furo"]
+test = ["pytest", "ruff", "ty"]
+
+[project.scripts]
+minimals = "minimals.__main__:main"
+
+[tool.flit.sdist]
+include = ["docs/", "tests/"]
+exclude = [".*", "docs/html"]
